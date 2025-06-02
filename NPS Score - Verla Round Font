@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horizontal NPS Survey</title>
+    <style>
+        body {
+            font-family: 'Verla Round', Arial, sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        
+        .nps-container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .nps-question {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        
+        .nps-scale {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            margin: 20px 0;
+            gap: 4px;
+            flex-wrap: wrap;
+        }
+        
+        .nps-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+            flex: 0 0 auto;
+        }
+        
+        .nps-number {
+            font-weight: bold;
+            font-size: 12px;
+            color: #666;
+        }
+        
+        /* Mobile responsive styles */
+        @media screen and (max-width: 480px) {
+            .nps-container {
+                padding: 20px 15px;
+            }
+            
+            .nps-scale {
+                flex-direction: column;
+                gap: 12px;
+                align-items: stretch;
+            }
+            
+            .nps-item {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                padding: 0 20px;
+                background-color: #f8f9fa;
+                border-radius: 25px;
+                height: 50px;
+                margin: 0;
+            }
+            
+            .nps-link {
+                width: 40px;
+                height: 40px;
+                line-height: 40px;
+                font-size: 16px;
+            }
+            
+            .nps-number {
+                font-size: 14px;
+                order: -1;
+            }
+            
+            .nps-question {
+                font-size: 16px;
+            }
+        }
+        
+        .nps-link {
+            display: inline-block;
+            width: 35px;
+            height: 35px;
+            line-height: 35px;
+            text-align: center;
+            background-color: #f0f0f0;
+            border: 2px solid #ddd;
+            border-radius: 50%;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            font-size: 14px;
+            transition: all 0.2s ease;
+        }
+        
+        .nps-link:hover {
+            background-color: #007bff;
+            color: white;
+            border-color: #007bff;
+            transform: scale(1.1);
+        }
+        
+        .detractor .nps-link:hover {
+            background-color: #dc3545;
+            border-color: #dc3545;
+        }
+        
+        .passive .nps-link:hover {
+            background-color: #ffc107;
+            border-color: #ffc107;
+            color: #000;
+        }
+        
+        .promoter .nps-link:hover {
+            background-color: #28a745;
+            border-color: #28a745;
+        }
+        
+        .scale-labels {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 15px;
+            font-size: 12px;
+            color: #666;
+        }
+        
+        .label-left {
+            text-align: left;
+        }
+        
+        .label-right {
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <div class="nps-container">
+        <div class="nps-question">
+            How likely are you to recommend us to a friend or colleague?
+        </div>
+        
+        <div class="nps-scale">
+            <div class="nps-item detractor">
+                <a href="{% update_property_link 'NPS' '0' 'https://howaboutnope.com/' %}" class="nps-link">0</a>
+                <span class="nps-number">0</span>
+            </div>
+            
+            <div class="nps-item detractor">
+                <a href="{% update_property_link 'NPS' '1' 'https://howaboutnope.com/' %}" class="nps-link">1</a>
+                <span class="nps-number">1</span>
+            </div>
+            
+            <div class="nps-item detractor">
+                <a href="{% update_property_link 'NPS' '2' 'https://howaboutnope.com/' %}" class="nps-link">2</a>
+                <span class="nps-number">2</span>
+            </div>
+            
+            <div class="nps-item detractor">
+                <a href="{% update_property_link 'NPS' '3' 'https://howaboutnope.com/' %}" class="nps-link">3</a>
+                <span class="nps-number">3</span>
+            </div>
+            
+            <div class="nps-item detractor">
+                <a href="{% update_property_link 'NPS' '4' 'https://howaboutnope.com/' %}" class="nps-link">4</a>
+                <span class="nps-number">4</span>
+            </div>
+            
+            <div class="nps-item detractor">
+                <a href="{% update_property_link 'NPS' '5' 'https://howaboutnope.com/' %}" class="nps-link">5</a>
+                <span class="nps-number">5</span>
+            </div>
+            
+            <div class="nps-item detractor">
+                <a href="{% update_property_link 'NPS' '6' 'https://howaboutnope.com/' %}" class="nps-link">6</a>
+                <span class="nps-number">6</span>
+            </div>
+            
+            <div class="nps-item passive">
+                <a href="{% update_property_link 'NPS' '7' 'https://howaboutnope.com/' %}" class="nps-link">7</a>
+                <span class="nps-number">7</span>
+            </div>
+            
+            <div class="nps-item passive">
+                <a href="{% update_property_link 'NPS' '8' 'https://howaboutnope.com/' %}" class="nps-link">8</a>
+                <span class="nps-number">8</span>
+            </div>
+            
+            <div class="nps-item promoter">
+                <a href="{% update_property_link 'NPS' '9' 'https://howaboutnope.com/' %}" class="nps-link">9</a>
+                <span class="nps-number">9</span>
+            </div>
+            
+            <div class="nps-item promoter">
+                <a href="{% update_property_link 'NPS' '10' 'https://howaboutnope.com/' %}" class="nps-link">10</a>
+                <span class="nps-number">10</span>
+            </div>
+        </div>
+        
+        <div class="scale-labels">
+            <span class="label-left">Not at all likely</span>
+            <span class="label-right">Extremely likely</span>
+        </div>
+    </div>
+</body>
+</html>
